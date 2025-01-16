@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Matches</title>
+</head>
+<body>
+    <h1>Matches for User</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Interests</th>
+        </tr>
+        <tr th:each="match : ${matches}">
+            <td th:text="${match.id}"></td>
+            <td th:text="${match.name}"></td>
+            <td th:text="${match.gender}"></td>
+            <td th:text="${match.age}"></td>
+            <td th:text="${match.interests}"></td>
+        </tr>
+    </table>
+
+    <a href="/api/users/all">Back to Users</a>
+</body>
+</html>
